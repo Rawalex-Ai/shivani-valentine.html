@@ -2,153 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For Shivani ❤️</title>
+  <title>Shivani</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
       height: 100vh;
-      background: radial-gradient(circle at top, #ff9a9e, #fad0c4);
+      background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Georgia', serif;
-      color: #fff;
-      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #333;
     }
 
-    .container {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(12px);
-      border-radius: 30px;
-      padding: 40px 30px;
-      width: 90%;
-      max-width: 420px;
+    .box {
       text-align: center;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.25);
-      animation: fadeIn 1.2s ease;
+      max-width: 420px;
+      padding: 30px;
+      animation: fade 1.2s ease;
     }
 
     h1 {
-      font-size: 30px;
-      margin-bottom: 10px;
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-weight: 600;
     }
 
     p {
       font-size: 18px;
-      line-height: 1.6;
-      margin: 12px 0;
+      line-height: 1.7;
+      margin: 15px 0;
+      color: #555;
     }
 
-    .buttons {
-      margin-top: 25px;
+    .question {
+      font-size: 20px;
+      margin-top: 30px;
+      color: #000;
+      font-weight: 500;
     }
 
     button {
-      padding: 14px 32px;
-      font-size: 17px;
-      border: none;
+      margin-top: 30px;
+      padding: 14px 36px;
+      font-size: 16px;
       border-radius: 30px;
+      border: none;
       cursor: pointer;
-      margin: 10px;
-      transition: all 0.3s ease;
+      background: #ff4d6d;
+      color: white;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    #yes {
-      background: linear-gradient(135deg, #43e97b, #38f9d7);
-      color: #0b3d2e;
-      font-weight: bold;
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 77, 109, 0.3);
     }
 
-    #yes:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 20px rgba(255,255,255,0.6);
-    }
-
-    #no {
-      background: rgba(255,255,255,0.3);
-      color: #fff;
-      position: absolute;
-    }
-
-    @keyframes fadeIn {
+    @keyframes fade {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    .heart {
-      position: absolute;
-      font-size: 18px;
-      animation: float 6s linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes float {
-      from {
-        transform: translateY(100vh);
-        opacity: 1;
-      }
-      to {
-        transform: translateY(-10vh);
-        opacity: 0;
-      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container" id="box">
-    <h1>Dear Shivani ❤️</h1>
-    <p>
-      Some people make life brighter without even trying.
-    </p>
-    <p>
-      You are that person for me.
-    </p>
-    <p>
-      And today, I just want to ask you something from my heart…
-    </p>
-    <p><strong>Will you be my Valentine? 🌹</strong></p>
+  <div class="box" id="content">
+    <h1>Hi Shivani,</h1>
 
-    <div class="buttons">
-      <button id="yes" onclick="yesClicked()">Yes ❤️</button>
-      <button id="no" onmouseover="moveNo()">No</button>
+    <p>
+      I’ve thought a lot about how to say this.
+    </p>
+
+    <p>
+      You’re someone who makes moments feel lighter  
+      and conversations feel easier.
+    </p>
+
+    <p>
+      I don’t want anything dramatic.  
+      Just something honest.
+    </p>
+
+    <div class="question">
+      Will you be my Valentine?
     </div>
+
+    <button onclick="yes()">Yes</button>
   </div>
 
   <script>
-    function moveNo() {
-      const no = document.getElementById("no");
-      no.style.left = Math.random() * 80 + "vw";
-      no.style.top = Math.random() * 80 + "vh";
-    }
-
-    function yesClicked() {
-      document.getElementById("box").innerHTML = `
-        <h1>She said YES ❤️</h1>
+    function yes() {
+      document.getElementById("content").innerHTML = `
+        <h1>Thank you ❤️</h1>
         <p>
-          This moment means more to me than words can say.
+          This means more to me than you know.
         </p>
         <p>
-          Thank you for choosing me, Shivani.
-        </p>
-        <p>
-          Happy Valentine’s Day 💖
+          I’m really glad it’s you.
         </p>
       `;
     }
-
-    // floating hearts
-    setInterval(() => {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "❤️";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (14 + Math.random() * 20) + "px";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }, 400);
   </script>
 
 </body>
